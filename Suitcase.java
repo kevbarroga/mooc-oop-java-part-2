@@ -42,7 +42,7 @@ public class Suitcase {
 	}
 
 	public Thing heaviestThing() {
-		Thing heaviest = things.get(0);
+		Thing heaviest = null;
 		for (Thing thing : things) {
 			if (heaviest.getWeight() < thing.getWeight()) {
 				heaviest = thing;
