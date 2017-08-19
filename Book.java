@@ -1,8 +1,16 @@
 import java.util.HashMap;
 
-public class Book {
+public class Book implements ToBeStored {
+	private String writer;
 	private String name;
 	private int publishingYear;
+	private double weight;
+
+	public Book(String writer, String name, double weight) {
+		this.writer = writer;
+		this.name = name;
+		this.weight = weight;
+	}
 
 	public Book(String name, int publishingYear) {
 		this.name = name;
@@ -13,13 +21,17 @@ public class Book {
 		return this.name;
 	}
 
+	public double weight() {
+		return this.weight;
+	}
+
 	public int getPublishingYear() {
 		return this.publishingYear;
 	}
 
 	@Override
 	public String toString() {
-		return this.name+" ("+this.publishingYear+")";
+		return this.writer+": "+this.name;
 	}
 
 	@Override
