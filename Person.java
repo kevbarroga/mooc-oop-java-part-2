@@ -7,6 +7,12 @@ public class Person implements Comparable <Person> {
 	private String name;
 
 	public Person(String name, int salary) {
+		if (name == null || name.length() > 40 || name.equals("")) {
+			throw new IllegalArgumentException("Please enter a valid name.");
+		}
+		if (age < 0 || age > 120) {
+			throw new IllegalArgumentException("Please enter a valid age.");
+		}
 		this.name = name;
 		this.salary = salary;
 	}

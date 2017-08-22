@@ -34,6 +34,26 @@ public class Calculator {
 		statistics();
 	}
 
+	public int multiplication(int fromInt) {
+		if (fromInt < 0) {
+			throw new IllegalArgumentException("Please enter non negative integer");
+		}
+		int multiplication = 1;
+		for (int i = 0; i <= fromInt; i++) {
+			multiplication *= i;
+		}
+		return multiplication;
+	}
+
+	public int binomialCoefficient(int setSize, int subsetSize) {
+		if (setSize < 0 || subsetSize < 0 || setSize < subsetSize) {
+			throw new IllegalArgumentException("Numbers must be positive and setSize must be grater then subsetSize");
+		}
+		int numerator = multiplication(setSize);
+		int denominator = multiplication(subsetSize) * multiplication(setSize - subsetSize);
+		return numerator / denominator;
+	}
+
 	private void sum() {
 		int sum = inputNumbers().get(0) + inputNumbers().get(0);
 		System.out.println("sum of values: " + sum);
